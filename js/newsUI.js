@@ -18,7 +18,6 @@ class NewsUI {
 
     static newsTemplate(news) {
         
-        // const row = document.querySelector('.news-wrap .row');
 
         // const col = document.createElement('div');
         // col.classList.add('col', 's12', 'm6');
@@ -55,7 +54,7 @@ class NewsUI {
         <div class="col s12 m6">
             <div class="card">
                 <div class="card-image">
-                    <img src="${news.urlToImage}">
+                    <img src="${news.urlToImage || 'developer.png'}">
                 </div>
                 <div class="card-content">
                     <span class="card-title">${news.title || ''}</span>

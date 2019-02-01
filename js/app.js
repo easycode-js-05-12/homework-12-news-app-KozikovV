@@ -1,5 +1,6 @@
 const newsService = new NewsService();
 const newsUI = new NewsUI();
+const alert = new Alert();
 
 // UI Elements
 const form = document.forms['newsControlForm'];
@@ -19,19 +20,29 @@ function onSelectChange(e) {
         const { articles } = response;
         newsUI.clearContainer();
         articles.forEach((news) => {
-            console.time("template");
             newsUI.addNews(news);
-            console.timeEnd("template")
         });
     }, category, country);
 }
 
 function searchFunction(e) {
+    if (e.target.value.length < 3)  {
+        newsUI.clearContainer();
+        alert.removeAlert();
+        return;
+    }; 
+
     if (e.target.value.length > 2) {
         const country = countrySelect.value || 'ua';
         const category = categorySelect.value || 'technology';
         const query = e.target.value;
         newsService.getEverithyng((response) => {
+            if(response.totalResults === 0) {
+                newsUI.clearContainer();
+                alert.alertView(e.target.value);
+                return;
+            };
+            alert.removeAlert();
             const { articles } = response;
             newsUI.clearContainer();
             articles.forEach((news) => newsUI.addNews(news));
