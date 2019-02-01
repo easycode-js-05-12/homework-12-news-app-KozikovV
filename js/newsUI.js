@@ -17,6 +17,40 @@ class NewsUI {
     }
 
     static newsTemplate(news) {
+        
+        // const row = document.querySelector('.news-wrap .row');
+
+        // const col = document.createElement('div');
+        // col.classList.add('col', 's12', 'm6');
+        // const card = document.createElement('div');
+        // card.classList.add('card');
+        // col.appendChild(card);
+        // const imageCard = document.createElement('div');
+        // imageCard.classList.add('card-image');
+        // card.appendChild(imageCard);
+        // const img = document.createElement('img');
+        // img.setAttribute('src', `${news.urlToImage}`);
+        // imageCard.appendChild(img);
+        // const cardContent = document.createElement('div');
+        // cardContent.classList.add('card-content');
+        // card.appendChild(cardContent);
+        // const cardTitle = document.createElement('span');
+        // cardTitle.classList.add('card-title');
+        // cardTitle.innerText = `${news.title || ''}`;
+        // cardContent.appendChild(cardTitle);
+        // const cardText = document.createElement('p');
+        // cardText.innerText = `${news.description || ''}`;
+        // cardContent.appendChild(cardText);
+        // const cardAction = document.createElement('div');
+        // cardTitle.classList.add('card-action');
+        // cardContent.appendChild(cardAction);
+        // const cardLink = document.createElement('a');
+        // cardLink.setAttribute('href', `${news.url}`);
+        // cardLink.setAttribute('target', `_blank`);
+        // cardLink.innerText = 'Read more';
+        // cardAction.appendChild(cardLink);
+
+        // return  col.outerHTML;
         return `
         <div class="col s12 m6">
             <div class="card">
@@ -35,4 +69,5 @@ class NewsUI {
         </div>
         `;
     }
+
 }
