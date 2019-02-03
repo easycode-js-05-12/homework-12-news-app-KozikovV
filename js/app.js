@@ -8,7 +8,11 @@ const countrySelect = form['country'];
 const categorySelect = form['category'];
 const inputSearch = form['search'];
 
-
+/**
+ * @description callback function whith processes the event on changіng select
+ * @param {event} e - some event
+ * @returns {undefined} undefined 
+ */
 
 function onSelectChange(e) {
     const country = countrySelect.value;
@@ -25,8 +29,14 @@ function onSelectChange(e) {
     }, category, country);
 }
 
+/**
+ * @description callback function whith processes the event on changіng search input
+ * @param {event} e - some event
+ * @returns {undefined} undefined 
+ */
+
 function searchFunction(e) {
-    if (e.target.value.length < 3)  {
+    if (e.target.value.length < 3) {
         newsUI.clearContainer();
         alert.removeAlert();
         return;

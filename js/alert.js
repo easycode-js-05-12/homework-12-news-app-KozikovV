@@ -1,11 +1,27 @@
+/**
+ * @description class creator whith three methods
+ * alertView; alertTemplate; removeAlert
+ */
+
 class Alert {
     constructor(){};
 
+    /**
+     * @description the method that creates the markup for the argument and displays it in DOM
+     * @param {string} title some string from search request value;
+     * @returns {undefined} undefined 
+     */
     alertView(title) {
         const template = Alert.alertTemplate(title);
         this.removeAlert();
         document.body.insertAdjacentHTML('afterbegin', template);
     }
+
+    /**
+     * @description the method that returns template whith title whithin
+     * @param {string} title some string from search request value;
+     * @returns {strind} tenplate 
+     */
 
     static alertTemplate(title) {
         return `
@@ -18,6 +34,11 @@ class Alert {
             </div>
         `;
     }
+
+    /**
+     * @description method which remove alert template from DOM
+     * @returns {undefined} undefined
+     */
 
     removeAlert() {
         if(document.querySelector('.alert')) {
