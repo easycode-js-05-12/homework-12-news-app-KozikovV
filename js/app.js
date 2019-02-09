@@ -40,7 +40,7 @@ function searchFunction(e) {
         newsUI.clearContainer();
         alert.removeAlert();
         return;
-    }; 
+    }
 
     if (e.target.value.length > 2) {
         const country = countrySelect.value || 'ua';
@@ -51,13 +51,13 @@ function searchFunction(e) {
                 newsUI.clearContainer();
                 alert.alertView(e.target.value);
                 return;
-            };
+            }
             alert.removeAlert();
             const { articles } = response;
             newsUI.clearContainer();
             articles.forEach((news) => newsUI.addNews(news));
         }, category, country, query);
-    };
+    }
 }
 
 // Event listeners

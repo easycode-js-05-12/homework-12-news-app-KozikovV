@@ -4,7 +4,9 @@
  */
 
 class Alert {
-    constructor(){};
+    constructor(){
+        this.container = document.body;
+    };
 
     /**
      * @description the method that creates the markup for the argument and displays it in DOM
@@ -14,7 +16,7 @@ class Alert {
     alertView(title) {
         const template = Alert.alertTemplate(title);
         this.removeAlert();
-        document.body.insertAdjacentHTML('afterbegin', template);
+        this.container.insertAdjacentHTML('afterbegin', template);
     }
 
     /**
